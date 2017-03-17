@@ -65,11 +65,11 @@ class NewsFeed
         $logger = new Logger($name);
         switch ($name) {
             case 'info_log':
-                $logger->pushHandler(new StreamHandler('../log/success_task.log', Logger::INFO));
+                $logger->pushHandler(new StreamHandler(__DIR__.'/../log/news_success_task.log', Logger::INFO));
                 $logger->info(date("Y-m-d H:i:s") . " - task was executed");
                 break;
             case 'error_log':
-                $logger->pushHandler(new StreamHandler('../log/error_task.log', Logger::ERROR));
+                $logger->pushHandler(new StreamHandler(__DIR__.'/../log/news_error_task.log', Logger::ERROR));
                 $logger->error(date("Y-m-d H:i:s") . " - something wrong");
                 break;
         }
